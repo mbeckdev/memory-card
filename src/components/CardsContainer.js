@@ -12,28 +12,29 @@ import pic08 from '../assets/612x612-08.png';
 import pic09 from '../assets/612x612-09.png';
 import pic10 from '../assets/612x612-10.png';
 import pic11 from '../assets/612x612-11.png';
-import pic12 from '../assets/612x612-12.png';
+import pic0 from '../assets/612x612-12.png';
 
 import './card-container.styles.css';
 
-function CardContainer() {
+function CardContainer(props) {
+  const { handleCardClick } = props;
   return (
     <div>
       {/* Note: change order of each card after you click any of them. */}
       <div id="cards-container">
         {/* <Card path={pic01} id={1} onClick={handleOnClick} /> */}
-        <Card path={pic01} id={1} />
-        <Card path={pic02} id={2} />
-        <Card path={pic03} id={3} />
-        <Card path={pic04} id={4} />
-        <Card path={pic05} id={5} />
-        <Card path={pic06} id={6} />
-        <Card path={pic07} id={7} />
-        <Card path={pic08} id={8} />
-        <Card path={pic09} id={9} />
-        <Card path={pic10} id={10} />
-        <Card path={pic11} id={11} />
-        <Card path={pic12} id={12} />
+        <Card path={pic0} id={0} handleCardClick={handleCardClick} />
+        <Card path={pic01} id={1} handleCardClick={handleCardClick} />
+        <Card path={pic02} id={2} handleCardClick={handleCardClick} />
+        <Card path={pic03} id={3} handleCardClick={handleCardClick} />
+        <Card path={pic04} id={4} handleCardClick={handleCardClick} />
+        <Card path={pic05} id={5} handleCardClick={handleCardClick} />
+        <Card path={pic06} id={6} handleCardClick={handleCardClick} />
+        <Card path={pic07} id={7} handleCardClick={handleCardClick} />
+        <Card path={pic08} id={8} handleCardClick={handleCardClick} />
+        <Card path={pic09} id={9} handleCardClick={handleCardClick} />
+        <Card path={pic10} id={10} handleCardClick={handleCardClick} />
+        <Card path={pic11} id={11} handleCardClick={handleCardClick} />
       </div>
     </div>
   );
