@@ -12,21 +12,17 @@ function App() {
   // gameState can be "over" or "playing" or "won"
   const [gameState, setGameState] = useState('over');
 
-  console.log(alreadyClicked);
-
   const handleCardClick = (e) => {
     e.preventDefault();
 
     let theCard = '';
     if (e.target.classList.contains('card')) {
-      // console.log('you clicked card');
+      // you clicked card
       theCard = e.target;
     } else {
-      // console.log('you clicked img');
+      // you clicked img
       theCard = e.target.parentElement;
     }
-    // console.log('theCard', theCard);
-    console.log('theCard.id', theCard.id);
 
     // thisID = 1 or 2 or 3 ...  or 12
     let thisID = theCard.id;
@@ -52,6 +48,8 @@ function App() {
       // this depends on alreadyClicked but that doesn't get set before this
       if (itsAWin) {
         setGameState('won');
+      } else {
+        rearrangeCards();
       }
       // It has already been clicked = end game
     } else {
@@ -99,7 +97,31 @@ function App() {
     }
   };
 
-  const rearrangeCards = () => {};
+  const [orderOfCards, setOrderOfCards] = useState([
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+  ]);
+
+  const rearrangeCards = () => {
+    let min = 0;
+    let max = 12;
+
+    // gives 0 to 11
+    let randomNumber = 0;
+
+    let randomNumbersChosen = [];
+    for (let i = min; i < max; i++) {
+      randomNumber = Math.floor(Math.random() * (max - min));
+
+      // find a new number that's not in the array already
+      while (!(randomNumbersChosen.indexOf(randomNumber) === -1)) {
+        randomNumber = Math.floor(Math.random() * (max - min));
+      }
+
+      randomNumbersChosen.push(randomNumber);
+    }
+
+    setOrderOfCards([...randomNumbersChosen]);
+  };
 
   return (
     <div className="App">
@@ -112,7 +134,11 @@ function App() {
         <div>
           Best Score: <span>0</span>
         </div>
-        <CardsContainer score={score} handleCardClick={handleCardClick} />
+        <CardsContainer
+          score={score}
+          handleCardClick={handleCardClick}
+          cardOrderArray={orderOfCards}
+        />
       </main>
     </div>
   );

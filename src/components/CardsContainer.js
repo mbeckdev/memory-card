@@ -16,26 +16,36 @@ import pic0 from '../assets/612x612-12.png';
 
 import './card-container.styles.css';
 
+let picArray = [
+  pic0,
+  pic01,
+  pic02,
+  pic03,
+  pic04,
+  pic05,
+  pic06,
+  pic07,
+  pic08,
+  pic09,
+  pic10,
+  pic11,
+];
+
 function CardContainer(props) {
-  const { handleCardClick } = props;
+  const { handleCardClick, cardOrderArray } = props;
+
+  let allCards = cardOrderArray.map((card) => (
+    <Card
+      key={card}
+      id={card}
+      path={picArray[card]}
+      handleCardClick={handleCardClick}
+    />
+  ));
+
   return (
     <div>
-      {/* Note: change order of each card after you click any of them. */}
-      <div id="cards-container">
-        {/* <Card path={pic01} id={1} onClick={handleOnClick} /> */}
-        <Card path={pic0} id={0} handleCardClick={handleCardClick} />
-        <Card path={pic01} id={1} handleCardClick={handleCardClick} />
-        <Card path={pic02} id={2} handleCardClick={handleCardClick} />
-        <Card path={pic03} id={3} handleCardClick={handleCardClick} />
-        <Card path={pic04} id={4} handleCardClick={handleCardClick} />
-        <Card path={pic05} id={5} handleCardClick={handleCardClick} />
-        <Card path={pic06} id={6} handleCardClick={handleCardClick} />
-        <Card path={pic07} id={7} handleCardClick={handleCardClick} />
-        <Card path={pic08} id={8} handleCardClick={handleCardClick} />
-        <Card path={pic09} id={9} handleCardClick={handleCardClick} />
-        <Card path={pic10} id={10} handleCardClick={handleCardClick} />
-        <Card path={pic11} id={11} handleCardClick={handleCardClick} />
-      </div>
+      <div id="cards-container">{allCards}</div>
     </div>
   );
 }
