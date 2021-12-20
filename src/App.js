@@ -5,6 +5,7 @@ import CardsContainer from './components/CardsContainer';
 
 function App() {
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
   const [alreadyClicked, setAlreadyClicked] = useState(
     new Array(12).fill(false)
   );
@@ -57,13 +58,25 @@ function App() {
     }
   };
 
+  const [endMessage, setEndMessage] = useState('');
+
   useEffect(() => {
     console.log('gameState = ', gameState);
     if (gameState === 'over') {
+      if (score > highScore) {
+        setHighScore(score);
+      }
+      setEndMessage('YOU LOST');
       setScore(0);
       setAlreadyClicked(new Array(12).fill(false));
     } else if (gameState === 'won') {
       console.log('********************\nyouwin\n***************');
+      if (score > highScore) {
+        setHighScore(score);
+      }
+      setEndMessage('YOU WON!');
+    } else {
+      setEndMessage('');
     }
   }, [gameState]);
 
@@ -132,8 +145,9 @@ function App() {
           Score: <span>{score}</span>
         </div>
         <div>
-          Best Score: <span>0</span>
+          Best Score: <span>{highScore}</span>
         </div>
+        <div id="end-message">{endMessage}</div>
         <CardsContainer
           score={score}
           handleCardClick={handleCardClick}
