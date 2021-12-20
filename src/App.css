@@ -13,11 +13,14 @@
 
 body {
   font-family: 'Noto Sans', sans-serif;
+  background: linear-gradient(5deg, #587285, #6ec2a6, #f49a87);
+  min-height: 100vh;
 }
 
 h1,
 span {
   font-family: 'Fredericka the Great', cursive;
+  text-shadow: 2px 2px 2px #e7daa9, 0 0 5px #e6a546;
 }
 
 span {
