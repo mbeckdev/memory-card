@@ -1,25 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Noto+Sans&display=swap');
+
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 #end-message {
   height: 2rem;
   /* background-color: red; */
+  font-size: x-large;
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1,
+span {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+span {
   font-size: x-large;
   font-weight: 700;
 }

@@ -139,8 +139,8 @@ function App() {
   return (
     <div className="App">
       <main>
-        <div>A Cool Memory Game</div>
-        <div>How to play. Click all the cards only once</div>
+        <h1>A Cool Memory Game</h1>
+        <div>How to win: Click all the cards only once</div>
         <div>
           Score: <span>{score}</span>
         </div>
