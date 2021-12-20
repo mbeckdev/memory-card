@@ -11,7 +11,7 @@ function App() {
   );
 
   // gameState can be "over" or "playing" or "won"
-  const [gameState, setGameState] = useState('over');
+  const [gameState, setGameState] = useState('starting');
 
   const handleCardClick = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ function App() {
       //set Already Clicked state.
       let newArray = [...alreadyClicked];
       newArray[thisID] = true;
-      console.log('newArray', newArray);
+
       setAlreadyClicked(newArray);
 
       if (gameState !== 'playing') {
@@ -61,22 +61,25 @@ function App() {
   const [endMessage, setEndMessage] = useState('');
 
   useEffect(() => {
-    console.log('gameState = ', gameState);
+    // console.log('gameState = ', gameState);
     if (gameState === 'over') {
       if (score > highScore) {
         setHighScore(score);
       }
-      setEndMessage('YOU LOST');
+      setEndMessage('YOU LOST WITH ' + score + ' POINTS');
       setScore(0);
       setAlreadyClicked(new Array(12).fill(false));
     } else if (gameState === 'won') {
-      console.log('********************\nyouwin\n***************');
+      // console.log('********************\nyouwin\n***************');
       if (score > highScore) {
         setHighScore(score);
       }
       setEndMessage('YOU WON!');
-    } else {
+    } else if (gameState === 'playing') {
       setEndMessage('');
+    } else {
+      setScore(0);
+      setAlreadyClicked(new Array(12).fill(false));
     }
   }, [gameState]);
 
@@ -141,6 +144,7 @@ function App() {
       <main>
         <h1>A Cool Memory Game</h1>
         <div>How to win: Click all the cards only once</div>
+        <br />
         <div>
           Score: <span>{score}</span>
         </div>
