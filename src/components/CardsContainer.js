@@ -44,7 +44,7 @@ function CardContainer(props) {
   ));
 
   return (
-    <div>
+    <div id="wrapper-cards-container">
       <div id="cards-container">{allCards}</div>
     </div>
   );

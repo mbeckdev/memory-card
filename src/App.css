@@ -6,7 +6,6 @@
 
 #end-message {
   height: 2rem;
-  /* background-color: red; */
   font-size: x-large;
   font-weight: 700;
 }
@@ -26,4 +25,66 @@ span {
 span {
   font-size: x-large;
   font-weight: 700;
+}
+
+#wrapper-cards-container {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 306px;
+  margin: 3px;
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    font-size: large;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  img {
+    width: 153px;
+    margin: 3px;
+  }
+  #cards-container {
+    width: 1000px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  body {
+    font-size: large;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  img {
+    width: 115px;
+    margin: 3px;
+  }
+  #cards-container {
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 599px) {
+  body {
+    font-size: large;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  img {
+    width: 115px;
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  img {
+    width: 100px;
+    margin: 3px;
+  }
 }
