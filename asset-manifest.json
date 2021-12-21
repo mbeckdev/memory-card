@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.e8a7dac2.chunk.css",
+    "main.js": "/memory-card/static/js/main.14821494.chunk.js",
+    "main.js.map": "/memory-card/static/js/main.14821494.chunk.js.map",
+    "runtime-main.js": "/memory-card/static/js/runtime-main.d6b987d8.js",
+    "runtime-main.js.map": "/memory-card/static/js/runtime-main.d6b987d8.js.map",
+    "static/js/2.d7921e17.chunk.js": "/memory-card/static/js/2.d7921e17.chunk.js",
+    "static/js/2.d7921e17.chunk.js.map": "/memory-card/static/js/2.d7921e17.chunk.js.map",
+    "static/js/3.83e15115.chunk.js": "/memory-card/static/js/3.83e15115.chunk.js",
+    "static/js/3.83e15115.chunk.js.map": "/memory-card/static/js/3.83e15115.chunk.js.map",
+    "index.html": "/memory-card/index.html",
+    "static/css/main.e8a7dac2.chunk.css.map": "/memory-card/static/css/main.e8a7dac2.chunk.css.map",
+    "static/js/2.d7921e17.chunk.js.LICENSE.txt": "/memory-card/static/js/2.d7921e17.chunk.js.LICENSE.txt",
+    "static/media/612x612-01.2a8a56ed.png": "/memory-card/static/media/612x612-01.2a8a56ed.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d6b987d8.js",
+    "static/js/2.d7921e17.chunk.js",
+    "static/css/main.e8a7dac2.chunk.css",
+    "static/js/main.14821494.chunk.js"
+  ]
+}
